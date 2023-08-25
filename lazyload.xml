@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.8" group="system" method="upgrade">
+	<name>Lazy Load Images</name>
+	<creationDate>5/10/23</creationDate>
+	<author>Daniel Stone</author>
+	<authorEmail>daniel@danielstone.dev</authorEmail>
+	<authorUrl>https://danielstone.dev</authorUrl>
+	<copyright>A copyright</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0</version>
+	<description>Turns hrefs into src-datas. MAKE SURE IT IS LAST IN LOAD ORDER</description>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+						name="loading_gif"
+						type="media"
+						label="Loading Icon"
+						required="true"
+				/>
+				<field
+						name="lazyload_script_url"
+						type="text"
+						label="Script URL"
+						required="true"
+						default="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+	<files>
+		<filename plugin="lazyload">lazyload.php</filename>
+	</files>
+</extension>
